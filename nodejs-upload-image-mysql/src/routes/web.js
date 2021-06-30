@@ -5,11 +5,15 @@ const uploadController = require("../controllers/upload");
 const upload = require("../middleware/upload");
 
 let routes = (app) => {
-  router.get("/", homeController.getHome);
+    //  router.get("/", controllers/home.getHome);
 
-  router.post("/upload", upload.single("file"), uploadController.uploadFiles);
+    //    router.post("/upload", upload.single("file"), upload.uploadFiles);
 
-  return app.use("/", router);
+    router.get("/", homeController.getHome);
+
+    router.post("/upload", upload.single("file"), uploadController.uploadFiles);
+
+    return app.use("/", router);
 };
 
 module.exports = routes;
