@@ -7,19 +7,19 @@
 <div>
 <div class="mySlides fade">
   <div class="numbertext">1 / 3</div>
-  <img src="./22.jpg" style="width:100%">
+  <img src="./hd4.jpeg" style="width:100%">
   <div class="text">Caption Text</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 3</div>
-  <img src="./images0.jpg" style="width:100%">
+  <img src="./hd5.jpeg" style="width:100%">
   <div class="text">Caption Two</div>
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 3</div>
-  <img src="./images(13).jpg" style="width:100%">
+  <img src="./hd3.jpg" style="width:100%">
   <div class="text">Caption Three</div>
 </div>
 
@@ -56,8 +56,14 @@
       <div class="card-body">
         <h5 class="card-title">Product name</h5>
         <p class="card-text">This is place of product description.</p>
-        <a href="#" class="card-link">add Product</a>
-        <a href="#" class="card-link">for sale:YES/NO</a>
+  <button type="button" class="btn btn-primary position-relative">
+  Inbox
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    99+
+    <span class="visually-hidden">unread messages</span>
+  </span>
+</button>
+        <span><a href="#" class="card-link">for sale:YES/NO</a></span>
       </div>
     </div>
   </div>
@@ -67,7 +73,12 @@
       <div class="card-body">
         <h5 class="card-title">Product name</h5>
         <p class="card-text">This is place of product description.</p>
-       <a href="#" class="card-link">add Product</a>
+      <button type="button" class="btn btn-primary position-relative">
+  Profile
+  <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+    <span class="visually-hidden">New alerts</span>
+  </span>
+</button>
     <a href="#" class="card-link">for sale:YES/NO</a>
      </div>
     </div>
@@ -87,7 +98,7 @@
   
 </template>
 <script>
-
+import 'bootstrap/dist/css/bootstrap.min.css'
 export default {
     name: "#slideshow-container",
     data(){

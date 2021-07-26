@@ -140,6 +140,9 @@ export default {
 </script>
 
 <style>
+.col-md-8{
+  background: url("./images (19).jpg") no-repeat;
+}
 .list {
   text-align: left;
   max-width: 750px;

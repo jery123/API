@@ -1,29 +1,63 @@
 {
-  "name": "node-mysql-registration-login-api",
-  "version": "1.0.0",
-  "description": "Node.js + MySQL API for User Management, Authentication and Registration",
-  "license": "MIT",
-  "repository": {
-      "type": "git",
-      "url": "https://github.com/cornflourblue/node-mysql-registration-login-api.git"
-  },
+  "name": "vue-projet-jery",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-      "start": "node ./server.js",
-      "start:dev": "nodemon ./server.js"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-      "bcryptjs": "^2.4.3",
-      "body-parser": "^1.19.0",
-      "cors": "^2.8.5",
-      "express": "^4.17.1",
-      "express-jwt": "^6.0.0",
-      "joi": "^17.2.0",
-      "jsonwebtoken": "^8.5.1",
-      "mysql2": "^2.1.0",
-      "rootpath": "^0.1.2",
-      "sequelize": "^6.3.4"
+    "axios": "^0.21.1",
+    "bootstrap": "^5.0.2",
+    "bootstrap-icons": "^1.5.0",
+    "bootstrap-vue": "^2.21.2",
+    "chartist": "^0.11.4",
+    "core-js": "^3.6.5",
+    "es6-promise": "^4.2.8",
+    "google-maps": "^4.3.3",
+    "vue": "^2.6.14",
+    "vue-clickaway": "^2.2.2",
+    "vue-github-buttons": "^3.1.0",
+    "vue-material": "^1.0.0-beta-15",
+    "vue-router": "^3.5.2",
+    "vue-social-sharing": "^3.0.8",
+    "vuetify": "^2.4.0"
   },
   "devDependencies": {
-      "nodemon": "^2.0.4"
-  }
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "grunt": "^1.4.1",
+    "grunt-contrib-sass": "^2.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "sass": "~1.32.0",
+    "sass-loader": "^10.2.0",
+    "vue-cli-plugin-vuetify": "~2.4.1",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.7.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }

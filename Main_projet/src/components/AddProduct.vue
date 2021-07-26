@@ -2,16 +2,23 @@
   <div class="submit-form">
     <div v-if="!submitted">
 <!-- <img src="./images(13).jpg"  alt="Cinque Terre" width="1000" height="1000"> -->
-        <div class="form-group">
+        <!-- <div class="form-group">
         <label for="picture" class="label-file">Picture</label>
         <input
           type="file"
            class=" img-circle" 
           id="picture"  
           name="picture"
-        />
+        /> -->
         <!-- <img src="./images0.jpg" class="rounded-circle" alt="Cinque Terre"> -->
-      </div>
+      
+
+<!--   pour inserer une image    -->
+
+ <div id="app"></div>
+
+<!--   end    -->
+
       <div class="form-group">
         <label for="title">Title</label>
         <input
@@ -50,6 +57,7 @@ import ProductDataService from "../services/ProductDataService";
 import 'bootstrap/dist/css/bootstrap.min.css'
 export default {
   name: "add-product",
+  
   data() {
     return {
       product: {
@@ -77,6 +85,7 @@ export default {
         .catch(e => {
           console.log(e);
         });
+        
     },
     
     newProduct() {
@@ -85,6 +94,7 @@ export default {
     }
   }
 };
+
 </script>
 
 <style>

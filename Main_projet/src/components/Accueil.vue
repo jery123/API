@@ -1,7 +1,15 @@
 <template>
-    <div>
+   
+<div class="slideshow-container">
+<!-- <div>
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="./wp1886344.jpg" alt="" width="100%" height="600" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
 
-<img src="./images(13).jpg" alt="" width="500" height="500">
+</div> -->
+<img class="img-fluid" src="./wp1886344.jpg" alt="" width="100%" height="600">
  
 <!-- <router-link class="btn btn-dark btn-lg btn-block" color="dark" to="/up">Se connecter</router-link> -->
 <button type="submit" class="btn btn-dark btn-lg btn-block"  @click="goToRegister()">Se connecter</button>
@@ -9,8 +17,9 @@
 
     </div>
 </template>
-<script>
+<script >
 import 'bootstrap/dist/css/bootstrap.min.css'
+
 export default {
      methods:{
    goToRegister(){
