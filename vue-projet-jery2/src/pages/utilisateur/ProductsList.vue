@@ -46,6 +46,8 @@
         Remove All
       </button>
     </div>
+    <!-- END of list -->
+
     <div class="col-md-6">
       <div v-if="currentProduct">
         <h4>Product</h4>

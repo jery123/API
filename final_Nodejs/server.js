@@ -16,6 +16,10 @@ app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const dbimg = require("./app/models/images");
+dbimg.sequelize.sync({ force: true }).then(() => {
+    console.log("Drop and re-sync db.");
+  });
 
 const db = require("./app/models/produits");
 db.sequelize.sync({ force: true }).then(() => {
@@ -25,10 +29,7 @@ const dbuser = require("./app/models/users");
 dbuser.sequelize.sync({ force: true }).then(() => {
     console.log("Drop and re-sync dbuser.");
 });
-const dbimg = require("./app/models/images");
-dbimg.sequelize.sync({ force: true }).then(() => {
-    console.log("Drop and re-sync db.");
-  });
+
   const dbadmin = require("./app/models/admins");
   dbadmin.sequelize.sync({ force: true }).then(() => {
       console.log("Drop and re-sync dbadmin.");
@@ -48,6 +49,9 @@ initRoutes(app);
 
 ///// route
 
+require("./app/routes/image.routes")(app);
+require("./app/routes/user.routes")(app);
+require("./app/routes/admin.routes")(app);
 require("./app/routes/produit.routes")(app);
 
 

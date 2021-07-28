@@ -73,12 +73,12 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   
-  {
-    path: '/accueil-client',
-    name: 'client',
+  // {
+  //   path: '/accueil-client',
+  //   name: 'client',
    
-    component: () => import(/* webpackChunkName: "about" */ "@/pages/utilisateur/Accueil.client.vue")
-  },
+  //   component: () => import(/* webpackChunkName: "about" */ "@/pages/utilisateur/Accueil.client.vue")
+  // },
   // {
   //   path: '/accueil client',
   //   name: 'index',
