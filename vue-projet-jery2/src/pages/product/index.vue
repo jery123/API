@@ -1,19 +1,19 @@
 <template>
   <div>
-    <VmHero></VmHero>
+    <!-- <VmHero></VmHero> -->
     <VmProductsList></VmProductsList>
   </div>
 </template>
 
 <script>
-import VmProductsList from '@/components/product/products_list/ProductsListContainer';
-import VmHero from '@/components/product/hero/Hero';
+import VmProductsList from '../../components/product/products_list/ProductsListContainer';
+// import VmHero from '../../components/product/hero/Hero.vue';
 
 export default {
   name: 'index',
   components: {
     VmProductsList,
-    VmHero
+    // VmHero
   }
 };
 </script>

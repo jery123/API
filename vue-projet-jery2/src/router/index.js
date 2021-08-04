@@ -10,6 +10,7 @@ import Typography from "@/pages/Typography.vue";
 import Icons from "@/pages/Icons.vue";
 import Maps from "@/pages/Maps.vue";
 import Notifications from "@/pages/Notifications.vue";
+import commande from "@/pages/NotificationCommandes.vue";
 import UpgradeToPRO from "@/pages/UpgradeToPRO.vue";
 import Dashboard_client from "@/pages/Layout/DashboardLayoutUser.vue";
 
@@ -27,7 +28,7 @@ const routes = [
         component: Dashboard
       },
       {
-        path: "user",
+        path: "admin-profil",
         name: "Profil d'administrateur",
         component: AdminProfil
       },
@@ -60,6 +61,11 @@ const routes = [
         component: Notifications
       },
       {
+        path: "commande",
+        name: "Notification",
+        component: commande
+      },
+      {
         path: "upgrade",
         name: "Version plus récente",
         component: UpgradeToPRO
@@ -79,14 +85,16 @@ const routes = [
    
   //   component: () => import(/* webpackChunkName: "about" */ "@/pages/utilisateur/Accueil.client.vue")
   // },
-  // {
-  //   path: '/accueil client',
-  //   name: 'index',
+
+  //////////////////pour les clients 
+  {
+    path: '/client',
+    name: 'index',
    
-  //   component: () => import(/* webpackChunkName: "about" */ '../components/Accueil.client.vue')
-  // },
+    component: () => import('../pages/utilisateur/Accueil.client.vue')
+  },
    {
-    path: "/dashboard-client",
+    path: "/dashboard-producteur",
     name: "Dashboard utilisateur",
      component: Dashboard_client,
      children: [
@@ -96,6 +104,11 @@ const routes = [
         component: () => import('@/pages/DashboardProd.vue')
        },
        {
+        path: '/addProduct',
+        name: 'Entrez les informations sur votre produit',
+        component: () => import('@/pages/utilisateur/AddProduct.vue')
+       },
+       {
         path: '/produits',
         name: 'Mes produits',
         component: () => import('@/pages/DashboardProd.vue')
@@ -103,21 +116,30 @@ const routes = [
        {
         path: '/info-produit',
         name: 'Info sur le produit',
-        component: () => import('@/pages/ProductProfileProd.vue')
+        component: () => import('@/pages/ProductProfilProd.vue')
        },
        {
         path: '/profil',
         name: 'Profil d\'utilisateur',
         component: () => import('@/pages/UserProfil.vue')
        },
-       
+       {
+        path: '/commandes',
+        name: 'Commandes sur vos produits',
+        component: () => import('@/pages/NotificationProd.vue')
+       },
     ]
   },
-  {
-    path: '/index',
-    name: 'index',
-    component: () => import('../pages/product/index.vue')
-  }
+  // {
+  //   path: '/index',
+  //   name: 'index',
+  //   component: () => import('../pages/product/index.vue')
+  // },
+  // {
+  //   path: '/default',
+  //   name: 'client',
+  //   component: () => import('../Vuemmerce/layouts/default.vue')
+  // }
 ]
 
 const router = new VueRouter({

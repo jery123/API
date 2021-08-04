@@ -2,21 +2,26 @@
   <div class="content">
     <div class="md-layout">
       <div class="md-layout-item md-medium-size-100 md-size-66">
-        <edit-profile-form data-background-color="green"> </edit-profile-form>
+        <edit-profil-user data-background-color="green"> </edit-profil-user>
       </div>
       <div class="md-layout-item md-medium-size-100 md-size-33">
-        <user-card> </user-card>
+        <user-card> <v-btn
+  color="primary"
+  elevation="18"
+  x-large
+  x-small
+></v-btn></user-card>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import { EditProfileForm, UserCard } from "@/pages";
+import { EditProfilUser, UserCard } from "@/pages";
 
 export default {
   components: {
-    EditProfileForm,
+    EditProfilUser,
     UserCard
   }
 };

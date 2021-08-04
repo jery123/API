@@ -1,6 +1,6 @@
 import http from "../http-common";
 
-class ProductlDataService {
+class ProductDataService {
   getAll() {
     return http.get("/products");
   }
@@ -25,9 +25,12 @@ class ProductlDataService {
     return http.delete(`/products`);
   }
 
-  findByTitle(title) {
-    return http.get(`/products?title=${title}`);
+  findByNom(nom) {
+    return http.get(`/products?nom=${nom}`);
+  }
+  findAllPublished() {
+    return http.get(`/products?published=0`);
   }
 }
 
-export default new ProductlDataService();
+export default new ProductDataService();

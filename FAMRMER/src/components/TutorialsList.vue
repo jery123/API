@@ -22,7 +22,7 @@
           :key="index"
           @click="setActiveTutorial(tutorial, index)"
         >
-         {{ tutorial.picture }}
+        
           {{ tutorial.title }}
         </li>
       </ul>

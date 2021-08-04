@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import ProductDataService from ".. /services/ProductDataService";
+import ProductDataService from "../../services/ProductDataService";
 import 'bootstrap/dist/css/bootstrap.min.css'
 export default {
   name: "add-product",

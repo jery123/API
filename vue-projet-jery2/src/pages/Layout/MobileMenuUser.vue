@@ -1,5 +1,5 @@
 <template>
-  <ul class="nav nav-mobile-menu">
+  <ul class="nav nav-mobile-menuUser">
     <li>
       <md-field>
         <label>Search</label>

@@ -7,7 +7,7 @@
       :sidebar-background-image="sidebarBackgroundImage"
     >
       <mobile-menu slot="content"></mobile-menu>
-      <sidebar-link to="/Dashboard-client">
+      <sidebar-link to="/Dashboard-producteur">
         <md-icon>dashboard</md-icon>
         <p>Dashboard</p>
       </sidebar-link>
@@ -38,7 +38,7 @@
         <md-icon>location_on</md-icon>
         <p>Maps</p>
       </sidebar-link> -->
-      <sidebar-link to="/notifications">
+      <sidebar-link to="/commandes">
         <md-icon>notifications</md-icon>
         <p>Notifications</p>
       </sidebar-link>

@@ -13,7 +13,7 @@
         <md-icon>dashboard</md-icon>
         <p>Dashboard</p>
       </sidebar-link>
-      <sidebar-link to="/user">
+      <sidebar-link to="/admin-profil">
         <md-icon>person</md-icon>
         <p>Profile</p>
       </sidebar-link>
@@ -30,13 +30,18 @@
         <md-icon>bubble_chart</md-icon>
         <p>Icons</p>
       </sidebar-link> -->
-      <sidebar-link to="/maps">
+      <sidebar-link  href="https://www.google.com/maps/place/Jangolo/@4.0899534,9.7598531,17z/data=!4m5!3m4!1s0x10610d7da94fcc77:0x6ea97342b8540442!8m2!3d4.0907132!4d9.7644665">
         <md-icon>location_on</md-icon>
-        <p>Maps</p>
+        <p>Nos locaux </p>
+        
       </sidebar-link>
       <sidebar-link to="/notifications">
         <md-icon>notifications</md-icon>
-        <p>Notifications</p>
+        <p>Nouveau produit</p>
+      </sidebar-link>
+        <sidebar-link to="/commande">
+        <md-icon>notifications</md-icon>
+        <p>Nouvelle commande</p>
       </sidebar-link>
       <sidebar-link to="/upgrade" class="active-pro">
         <md-icon>unarchive</md-icon>

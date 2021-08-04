@@ -20,8 +20,7 @@
           v-for="(product, index) in products"
           :key="index"
           @click="setActiveProduct(Product, index)">
-      <img src="" class="card-img-top" alt="...">
-      <div class="card-body">
+           <div class="card-body">
         <h5 class="card-title"> {{ Product.title }}</h5>
         <p class="card-text">  </p>
       </div>
@@ -34,8 +33,7 @@
           :key="index"
           @click="setActiveProduct(Product, index)"
         >
-         {{ Product.picture }}
-          {{ Product.title }}
+             {{ Product.title }}
         </li>
       </ul>
 

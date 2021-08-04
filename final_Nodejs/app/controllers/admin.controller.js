@@ -13,7 +13,7 @@ exports.create = (req, res) => {
     }
   
     // Create a Admin
-    const Admin = {
+    const admin = {
           nom:  req.body.nom ,
           prenom:  req.body.prenom ,
         //   AdminName:  req.body.AdminName,
@@ -30,7 +30,7 @@ exports.create = (req, res) => {
     };
 
      // Save Admin in the database
-     Amind.create(admin)
+     Admin.create(admin)
      .then(data => {
        res.send(data);
      })

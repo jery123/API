@@ -1,5 +1,6 @@
 // Sidebar on the right. Used as a local plugin in DashboardLayout.vue
 import SideBar from "./components/SidebarPlugin";
+import SideBarUser from "./components/SidebarPlugin";
 
 // asset imports
 import VueMaterial from "vue-material";
@@ -15,6 +16,7 @@ import "es6-promise/auto";
 export default {
   install(Vue) {
     Vue.use(SideBar);
+    Vue.use(SideBarUser);
     Vue.use(VueMaterial);
   }
 };

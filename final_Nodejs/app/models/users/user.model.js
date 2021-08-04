@@ -1,16 +1,16 @@
 module.exports = (sequelize, Sequelize) => {
     const User = sequelize.define("user", {
-        imgId: {
-            type: Sequelize.INTEGER,
-            defaultValue: 1,
-            allowNull: false,
-            references: {
-                model: 'images',
-                key: 'id'
-            },
-            onUpdate: 'cascade',
-            onDelete: 'cascade'
-        },
+        // imgId: {
+        //     type: Sequelize.INTEGER,
+        //     defaultValue: 1,
+        //     allowNull: false,
+        //     references: {
+        //         model: 'images',
+        //         key: 'id'
+        //     },
+        //     onUpdate: 'cascade',
+        //     onDelete: 'cascade'
+        // },
       
         nom: {
         type: Sequelize.STRING,
@@ -20,7 +20,7 @@ module.exports = (sequelize, Sequelize) => {
         },
         userName: {            
         type: Sequelize.STRING,
-            defaultValue: false,
+            defaultValue: "user",
             allowNull: false,
         },
         email: {            
@@ -52,7 +52,7 @@ module.exports = (sequelize, Sequelize) => {
             defaultValue: 0,
             },
         is_delete: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.BOOLEAN,
             defaultValue: 0,
             },
            

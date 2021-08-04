@@ -1,27 +1,27 @@
 module.exports = (sequelize, Sequelize) => {
     const Produit = sequelize.define("produit", {
-      prodId: {
-          type: Sequelize.INTEGER,
-          //defaultValue: 1,
-          allowNull: false,
-          references: {
-              model: 'users',
-              key: 'id'
-          },
-          onUpdate: 'cascade',
-          onDelete: 'cascade'
-      },
-        imgId: {
-            type: Sequelize.INTEGER,
-            defaultValue: 1,
-            allowNull: false,
-            references: {
-                model: 'images',
-                key: 'id'
-            },
-            onUpdate: 'cascade',
-            onDelete: 'cascade'
-        },
+    //   prodId: {
+    //       type: Sequelize.INTEGER,
+    //       //defaultValue: 1,
+    //       allowNull: false,
+    //       references: {
+    //           model: 'users',
+    //           key: 'id'
+    //       },
+    //       onUpdate: 'cascade',
+    //       onDelete: 'cascade'
+    //   },
+        // imgId: {
+        //     type: Sequelize.INTEGER,
+        //     defaultValue: 1,
+        //     allowNull: false,
+        //     references: {
+        //         model: 'images',
+        //         key: 'id'
+        //     },
+        //     onUpdate: 'cascade',
+        //     onDelete: 'cascade'
+        // },
       
         nom: {
             type: Sequelize.STRING,

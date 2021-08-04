@@ -47,7 +47,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: "Vue ADMIN"
+      default: "Janlogo Farmer"
     },
     sidebarBackgroundImage: {
       type: String,
