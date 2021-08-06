@@ -14,50 +14,50 @@
           <div class="md-layout-item md-small-size-100 md-size-33">
             <md-field>
               <label>Nom d'utilisateur</label>
-              <md-input v-model="user.username" type="text"></md-input>
+              <md-input v-model="farmer.username" type="text"></md-input>
             </md-field>
           </div>
           <div class="md-layout-item md-small-size-100 md-size-33">
             <md-field>
               <label>Email Address</label>
-              <md-input v-model="user.email" type="email"></md-input>
+              <md-input v-model="farmer.email" type="email"></md-input>
             </md-field>
           </div>
           <div class="md-layout-item md-small-size-100 md-size-33">
             <md-field>
               <label>Password</label>
-              <md-input v-model="user.mdp" type="password"></md-input>
+              <md-input v-model="farmer.mdp" type="password"></md-input>
             </md-field>
           </div>
           <div class="md-layout-item md-small-size-100 md-size-50">
             <md-field>
               <label>Nom</label>
-              <md-input v-model="user.nom" type="text"></md-input>
+              <md-input v-model="farmer.nom" type="text"></md-input>
             </md-field>
           </div>
           <div class="md-layout-item md-small-size-100 md-size-50">
             <md-field>
               <label>Prénom</label>
-              <md-input v-model="user.prenom" type="text"></md-input>
+              <md-input v-model="farmer.prenom" type="text"></md-input>
             </md-field>
           </div>
          
           <!-- <div class="md-layout-item md-small-size-100 md-size-100">
             <md-field>
               <label>Adress</label>
-              <md-input v-model="user.address" type="text"></md-input>
+              <md-input v-model="farmer.address" type="text"></md-input>
             </md-field>
           </div> -->
           <div class="md-layout-item md-small-size-100 md-size-33">
             <md-field>
               <label>Ville</label>
-              <md-input v-model="user.ville" type="text"></md-input>
+              <md-input v-model="farmer.ville" type="text"></md-input>
             </md-field>
           </div>
           <div class="md-layout-item md-small-size-100 md-size-33">
             <md-field>
               <label>Télephone</label>
-              <md-input v-model="user.telephone" type="number"></md-input>
+              <md-input v-model="farmer.telephone" type="number"></md-input>
             </md-field>
           </div>
           <!-- <div class="md-layout-item md-small-size-100 md-size-33">
@@ -75,11 +75,11 @@
           <div class="md-layout-item md-size-100">
             <md-field maxlength="5">
               <label>Experience</label>
-              <md-textarea v-model="user.experience"></md-textarea>
+              <md-textarea v-model="farmer.experience"></md-textarea>
             </md-field>
           </div>
           <div class="md-layout-item md-size-100 text-right">
-            <md-button @click="saveUser" class="md-raised md-success">Modifier</md-button>
+            <md-button @click="saveFarmer" class="md-raised md-success">Modifier</md-button>
           </div>
          
         </div>
@@ -89,7 +89,7 @@
      
         <div v-else>
       <h4>Votre profil a été modifier avec succès</h4>
-      <md-button class="btn btn-success" @click="newUser">Add</md-button>
+      <md-button class="btn btn-success" @click="newFarmer">Add</md-button>
     </div>
   </form>
 
@@ -102,7 +102,7 @@ export default {
   
   data() {
     return {
-      user: {
+      farmer: {
         id: null,
         nom: "",
         prenom: "",
@@ -120,21 +120,21 @@ export default {
 
   },
   methods: {
-    saveUser() {
+    saveFarmer() {
       var data = {
-         nom:this.user.nom,
-        prenom: this.user.prenom,
-        username: this.user.username,
-        email: this.user.email,
-        mdp:this.user.mdp,
-        experience:this.user.experience,
-        ville:this.user.ville,
-        telephone:this.user.telephone,
+         nom:this.farmer.nom,
+        prenom: this.farmer.prenom,
+        username: this.farmer.username,
+        email: this.farmer.email,
+        mdp:this.farmer.mdp,
+        experience:this.farmer.experience,
+        ville:this.farmer.ville,
+        telephone:this.farmer.telephone,
            };
 
       FarmerDataService.create(data)
         .then(response => {
-          this.user.id = response.data.id;
+          this.farmer.id = response.data.id;
           console.log(response.data);
           this.submitted = true;
         })
@@ -144,9 +144,9 @@ export default {
         
     },
     
-    newUser() {
+    newFarmer() {
       this.submitted = false;
-      this.user = {};
+      this.farmer = {};
     }
   }
 };

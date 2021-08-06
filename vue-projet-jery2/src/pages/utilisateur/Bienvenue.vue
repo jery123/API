@@ -11,11 +11,11 @@
 
       <div class="col-md-12">
         <h1>
-          Bienvenu sur la pages commerciale de Jangolo !
+          Bienvenue sur la page commerciale de Jangolo !
         </h1>
 
         <p class="tagline">
-         Jangolo vous remercie pour la totale confiance que vous l'accordez
+         Jangolo vous remercie pour la totale confiance que vous lui accordez
         </p>
         <a class="btn btn-full scrollto" href="#vous_etes">Debuter</a>
       </div>
@@ -147,7 +147,7 @@
             
                                                                                             </div>
                                                                                             <div class="modal-footer">
-                                                                                               <md-button class="md-info" @click="newClient" >OK</md-button>                
+                                                                                               <md-button class="md-info" @click="newClient" :href="'/client'" >OK</md-button>                
                                                                                             </div>
                                                                                       </div>
                                                                               </div>
@@ -250,7 +250,7 @@
             
                                                                                             </div>
                                                                                             <div class="modal-footer">
-                                                                                               <md-button class="md-info" @click="newFarmer" >OK</md-button>                
+                                                                                               <md-button class="md-info" @click="newFarmer" :href="'/dashboard-producteur'">OK</md-button>                
                                                                                             </div>
                                                                                       </div>
                                                                               </div>

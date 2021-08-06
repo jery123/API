@@ -94,6 +94,12 @@ const routes = [
     component: () => import('../pages/utilisateur/Accueil.client.vue')
   },
   {
+    path: '/detail',
+    name: 'detail',
+   
+    component: () => import('../pages/utilisateur/product_detail.vue')
+  },
+  {
     path: '/',
     name: 'home',
    

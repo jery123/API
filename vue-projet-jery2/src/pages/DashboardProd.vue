@@ -26,25 +26,23 @@
 <!--===============Vos produits ================-->
  
    <div class="list row">
-       <div class="col-md-8">
-         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Search by title"
-             v-model="nom"/>
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button"
-                 @click="searchNom"
-                   >
-                     Search
-                </button>
-              </div>
-         </div>
-       </div>
+          <!-- <p class="control has-icons-left">
+		<input class="input is-rounded" type="text"	v-model="nom"	placeholder="Search by title"  @keyup="searchNom">
+		<span class="icon is-small is-left">
+			<i class="fa fa-search"></i>
+		</span>
+	</p> -->
        <md-card>
        <div class="card">
-        
-          <md-card-header data-background-color="green"> 
-           <h4>Vos produits</h4>
+         <md-card-header data-background-color="green">
+            <h4 class="title">Vos produits</h4>
+            <p class="category">
+             Consultez vos notifications chaque jour<i class="fa fa-heart heart"></i>
+            </p>
           </md-card-header>
+          <!-- <md-card-header data-background-color="green"> 
+           <h4>Vos produits</h4>
+          </md-card-header> -->
            <!-- <md-card-content> -->
                 <ul class="list-group">
                   <li class="list-group-item"
@@ -85,14 +83,11 @@
         
           </div>
     <!--  -->
-       <md-button type="button" class="md-succes" data-toggle="modal" data-target="#produit">Ajouter un produit </md-button>
-
-
-
+       <md-button type="button"  class="md-succes" data-toggle="modal" data-target="#produit">Ajouter un produit </md-button>
          <div class="modal fade" id="produit" tabindex="-1" role="dialog" aria-hidden="true">
-                           <div class="modal-dialog" role="document">
-                              <div class="modal-content">
-                                 <div class="modal-header">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
                                     <!-- <h5 class="modal-title" id="prodRegis">Enregistrement</h5> -->
                                               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
                                   </div>
@@ -189,21 +184,10 @@
 import ProduitDataService from '../services/ProduitDataService';
 import 'bootstrap/dist/css/bootstrap.min.css'
   export default {
-	  //  name: "Dashboard-producteur",
-    data() {
+        data() {
 
     return {
-      produit: {
-       id: null,
-       prodId:"",
-       imgId:"",
-       nom:"",
-       description:"",
-       quantité:"",
-       prixUnitaire:"",
-       uniteDeMesure:"",
-       published: false
-      },
+      produit: {id: null, prodId:"",  imgId:"", nom:"", description:"", quantité:"", prixUnitaire:"", uniteDeMesure:"",  published: false },
         produits: [],
       currentProduit: null,
       currentIndex: -1,

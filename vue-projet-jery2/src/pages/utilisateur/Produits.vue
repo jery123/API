@@ -8,41 +8,13 @@
     <div class="card-content">
       <div class="media">
         <div class="media-content">
-          <p class="title is-4">{{ product.title }}</p>
+          <p class="title is-4">{{ product.nom }}</p>
         </div>
-        <!-- <div>
-          <button class="button is-small" :title="removeFromFavouriteLabel" v-show="product.isFavourite" @click="removeFromFavourite(product.id)">
-            <span class="icon is-small">
-              <i class="fas fa-heart"></i>
-            </span>
-          </button>
-          <button class="button is-small" :title="addToFavouriteLabel" v-show="!product.isFavourite" @click="saveToFavorite(product.id)">
-            <span class="icon is-small">
-              <i class="far fa-heart"></i>
-            </span>
-          </button>
-        </div> -->
+       
       </div>
       <div class="content is-clearfix">
         <p>{{ product.description }}</p>
-        <!-- <div class="is-pulled-left">
-          <i v-if="product.ratings === 1" class="fa fa-star"></i>
-          <i v-if="product.ratings === 2" class="fa fa-star"></i>
-          <i v-if="product.ratings === 2" class="fa fa-star"></i>
-          <i v-if="product.ratings === 3" class="fa fa-star"></i>
-          <i v-if="product.ratings === 3" class="fa fa-star"></i>
-          <i v-if="product.ratings === 3" class="fa fa-star"></i>
-          <i v-if="product.ratings === 4" class="fa fa-star"></i>
-          <i v-if="product.ratings === 4" class="fa fa-star"></i>
-          <i v-if="product.ratings === 4" class="fa fa-star"></i>
-          <i v-if="product.ratings === 4" class="fa fa-star"></i>
-          <i v-if="product.ratings === 5" class="fa fa-star"></i>
-          <i v-if="product.ratings === 5" class="fa fa-star"></i>
-          <i v-if="product.ratings === 5" class="fa fa-star"></i>
-          <i v-if="product.ratings === 5" class="fa fa-star"></i>
-          <i v-if="product.ratings === 5" class="fa fa-star"></i>
-          <p>{{ product.reviews > 0 ? `${product.reviews} Reviews` : 'No reviews' }}</p>
-        </div> -->
+        
         <p class="is-pulled-right">
           <span class="title is-4"><strong>&euro; {{ product.price }}</strong></span>
         </p>
@@ -61,13 +33,13 @@
         </div>
       </div>
     </div>
-    <!-- <nuxt-link
+    <router-link
       class="details"
       :to="{
         name: 'product_detail-id',
         params: {
           id: product.id,
-          title: product.title,
+          nom: product.nom,
           price: product.price,
           rating: product.ratings,
           reviews: product.reviews,
@@ -75,7 +47,7 @@
         }
       }"
     >
-    </nuxt-link> -->
+    </router-link>
   </div>
 </template>
 
