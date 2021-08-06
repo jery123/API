@@ -26,7 +26,7 @@
           class="form-control"
           id="title"
           required
-          v-model="product.title"
+          v-model="produit.title"
           name="title"
         />
       </div>
@@ -37,30 +37,30 @@
           class="form-control"
           id="description"
           required
-          v-model="product.description"
+          v-model="produit.description"
           name="description"
         />
       </div>
 
-      <button @click="saveProduct" class="btn btn-success">Submit</button>
+      <button @click="saveProduit" class="btn btn-success">Submit</button>
     </div>
 
     <div v-else>
       <h4>You submitted successfully!</h4>
-      <button class="btn btn-success" @click="newProduct">Add</button>
+      <button class="btn btn-success" @click="newProduit">Add</button>
     </div>
   </div>
 </template>
 
 <script>
-import ProductDataService from "../../services/ProductDataService";
+import ProduitDataService from "../../services/ProduitDataService";
 import 'bootstrap/dist/css/bootstrap.min.css'
 export default {
   name: "add-product",
   
   data() {
     return {
-      product: {
+      produit: {
         id: null,
         title: "",
         description: "",
@@ -71,15 +71,15 @@ export default {
 
   },
   methods: {
-    saveProduct() {
+    saveProduit() {
       var data = {
-        title: this.product.title,
-        description: this.product.description
+        title: this.produit.title,
+        description: this.produit.description
       };
 
-      ProductDataService.create(data)
+      ProduitDataService.create(data)
         .then(response => {
-          this.product.id = response.data.id;
+          this.produit.id = response.data.id;
           console.log(response.data);
           this.submitted = true;
         })
@@ -89,9 +89,9 @@ export default {
         
     },
     
-    newProduct() {
+    newProduit() {
       this.submitted = false;
-      this.product = {};
+      this.produit = {};
     }
   }
 };

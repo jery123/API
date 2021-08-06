@@ -8,66 +8,58 @@
         </div>
       </div>
     </div>
-     <!-- <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form> -->
     <div class="card">
-      <h4>Products List</h4>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
+      <h4>Produits List</h4>
+      <!-- <div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col">
     <div class="list-group-item"   :class="{ active: index == currentIndex }"
-          v-for="(product, index) in products"
+          v-for="(produit, index) in produits"
           :key="index"
-          @click="setActiveProduct(Product, index)">
+          @click="setActiveProduit(Produit, index)">
            <div class="card-body">
-        <h5 class="card-title"> {{ Product.title }}</h5>
+        <h5 class="card-title"> {{ Produit.title }}</h5>
         <p class="card-text">  </p>
       </div>
     </div>
   </div>
-  </div>
+  </div> -->
       <ul class="list-group">
         <li class="list-group-item"   :class="{ active: index == currentIndex }"
-          v-for="(product, index) in products"
+          v-for="(produit, index) in produits"
           :key="index"
-          @click="setActiveProduct(Product, index)"
+          @click="setActiveProduit(Produit, index)"
         >
-             {{ Product.title }}
+             {{ Produit.title }}
         </li>
       </ul>
-
-      <button class="m-3 btn btn-sm btn-danger" @click="removeAllProducts">
-        Remove All
-      </button>
-      <button class="m-3 btn btn-sm btn-danger" @click="removeAllProducts">
+      <button class="m-3 btn btn-sm btn-danger" @click="removeAllProduits">
         Remove All
       </button>
     </div>
     <!-- END of list -->
 
     <div class="col-md-6">
-      <div v-if="currentProduct">
-        <h4>Product</h4>
+      <div v-if="currentProduit">
+        <h4>Produit</h4>
         <div>
-          <label><strong>Title:</strong></label> {{ currentProduct.title }}
+          <label><strong>Title:</strong></label> {{ currentProduit.title }}
         </div>
         <div>
-          <label><strong>Description:</strong></label> {{ currentProduct.description }}
+          <label><strong>Description:</strong></label> {{ currentProduit.description }}
         </div>
         <div>
-          <label><strong>Status:</strong></label> {{ currentProduct.published ? "Published" : "Pending" }}
+          <label><strong>Status:</strong></label> {{ currentProduit.published ? "Published" : "Pending" }}
         </div>
 
         <a class="badge badge-warning"
-          :href="'/Products/' + currentProduct.id"
+          :href="'/Produits/' + currentProduit.id"
         >
           Edit
         </a>
       </div>
       <div v-else>
         <br />
-        <p>Please click on a Product...</p>
+        <p>Please click on a Produit...</p>
         
       </div>
     </div>
@@ -75,23 +67,23 @@
 </template>
 
 <script>
-import ProductDataService from "../services/ProductDataService";
+import ProduitDataService from "../services/ProduitDataService";
 import 'bootstrap/dist/css/bootstrap.min.css'
 export default {
   name: "products-list",
   data() {
     return {
-      products: [],
-      currentProduct: null,
+      produits: [],
+      currentProduit: null,
       currentIndex: -1,
       title: ""
     };
   },
   methods: {
-    retrieveProducts() {
-      ProductDataService.getAll()
+    retrieveProduits() {
+      ProduitDataService.getAll()
         .then(response => {
-          this.products = response.data;
+          this.produits = response.data;
           console.log(response.data);
         })
         .catch(e => {
@@ -100,18 +92,18 @@ export default {
     },
 
     refreshList() {
-      this.retrieveProducts();
-      this.currentProduct = null;
+      this.retrieveProduits();
+      this.currentProduit = null;
       this.currentIndex = -1;
     },
 
-    setActiveProduct(product, index) {
-      this.currentProduct = product;
+    setActiveProduit(produit, index) {
+      this.currentProduit = produit;
       this.currentIndex = index;
     },
 
-    removeAllProducts() {
-      ProductDataService.deleteAll()
+    removeAllProduits() {
+      ProduitDataService.deleteAll()
         .then(response => {
           console.log(response.data);
           this.refreshList();
@@ -122,9 +114,9 @@ export default {
     },
     
     searchTitle() {
-      ProductDataService.findByTitle(this.title)
+      ProduitDataService.findByTitle(this.title)
         .then(response => {
-          this.products = response.data;
+          this.produits = response.data;
           console.log(response.data);
         })
         .catch(e => {
@@ -133,7 +125,7 @@ export default {
     }
   },
   mounted() {
-    this.retrieveProducts();
+    this.retrieveProduits();
   }
 };
 </script>

@@ -10,12 +10,7 @@
 
       <md-card-content>
         <div class="md-layout">
-          <!-- <div class="md-layout-item md-small-size-100 md-size-33">
-            <md-field>
-              <label>Jangolo </label>
-              <md-input v-model="disabled" disabled=""></md-input>
-            </md-field>
-          </div> -->
+        
           <div class="md-layout-item md-small-size-100 md-size-33">
             <md-field>
               <label>Nom d'utilisateur</label>
@@ -100,7 +95,7 @@
 
 </template>
 <script>
-import UserDataService from "../../services/UserDataService";
+import FarmerDataService from "../../services/FarmerDataService";
 
 export default {
   name: "edit-profil-user",
@@ -137,7 +132,7 @@ export default {
         telephone:this.user.telephone,
            };
 
-      UserDataService.create(data)
+      FarmerDataService.create(data)
         .then(response => {
           this.user.id = response.data.id;
           console.log(response.data);

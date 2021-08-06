@@ -16,18 +16,11 @@ exports.create = (req, res) => {
     const admin = {
           nom:  req.body.nom ,
           prenom:  req.body.prenom ,
-        //   AdminName:  req.body.AdminName,
           email:   req.body.email,
           mdp: req.body.mdp,
           experience: req.body.experience,
           telephone: req.body.telephone,                  
-        //   role:  req.body.experience ,
-        //   is_delete:  req.body.experience ,
-        // imgId: req.body.imgId,
-        // nom: req.body.nom,
-        // description: req.body.description,
-        // published: req.body.published ? req.body.published : false
-    };
+         };
 
      // Save Admin in the database
      Admin.create(admin)

@@ -18,7 +18,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: "/",
+    path: "/admin",
     component: DashboardLayout,
     redirect: "/dashboard",
     children: [
@@ -93,6 +93,12 @@ const routes = [
    
     component: () => import('../pages/utilisateur/Accueil.client.vue')
   },
+  {
+    path: '/',
+    name: 'home',
+   
+    component: () => import('../pages/utilisateur/Bienvenue.vue'),
+    },
    {
     path: "/dashboard-producteur",
     name: "Dashboard utilisateur",
@@ -100,7 +106,7 @@ const routes = [
      children: [
        {
         path: '/index',
-        name: 'Dashboard producteur',
+        name: "Dashboard-producteur",
         component: () => import('@/pages/DashboardProd.vue')
        },
        {
@@ -109,9 +115,9 @@ const routes = [
         component: () => import('@/pages/utilisateur/AddProduct.vue')
        },
        {
-        path: '/produits',
-        name: 'Mes produits',
-        component: () => import('@/pages/DashboardProd.vue')
+        path: '/dashboard-producteur',
+        name: 'Dashboard-producteur',
+        component: () => import('../pages/DashboardProd.vue')
        },
        {
         path: '/info-produit',
@@ -130,10 +136,33 @@ const routes = [
        },
     ]
   },
+   
+   /**================================================
+    *                                                *
+    *                    produit                     *
+    *                                                *
+    * ===============================================*
+    */
+   
+   {
+    path: "/produits/:id",
+    name: "produit-details",
+    component: () => import("../pages/utilisateur/Produit")
+  },
+  {
+    path: "/produitfarm/:id",
+    name: "produitfarm-details",
+    component: () => import("../pages/utilisateur/ProduitFarm")
+  },
+   
+   
+//=======================================END
+   
+   
   // {
-  //   path: '/index',
+  //   path: '/index1',
   //   name: 'index',
-  //   component: () => import('../pages/product/index.vue')
+  //   component: () => import('../pages/DashboardClient.vue')
   // },
   // {
   //   path: '/default',

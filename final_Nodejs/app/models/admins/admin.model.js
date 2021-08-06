@@ -1,27 +1,22 @@
 module.exports = (sequelize, Sequelize) => {
     const Admin = sequelize.define("admin", {
-        // imgId: {
-        //     type: Sequelize.INTEGER,
-        //     defaultValue: 1,
-        //     allowNull: true,
-        //     references: {
-        //         model: 'images',
-        //         key: 'id'
-        //     },
-        //     onUpdate: 'cascade',
-        //     onDelete: 'cascade'
-        // },
+        imgId: {
+            type: Sequelize.INTEGER,
+            defaultValue: 2,
+            allowNull: true,
+            references: {
+                model: 'images',
+                key: 'id'
+            },
+            onUpdate: 'cascade',
+            onDelete: 'cascade'
+        },
         nom: {
         type: Sequelize.STRING,
       },
       prenom: {
         type: Sequelize.STRING,
         },
-        // userName: {            
-        // type: Sequelize.STRING,
-        //     defaultValue: false,
-        //     allowNull: false,
-        // },
         email: {            
             type: Sequelize.STRING,
                 defaultValue: false,

@@ -16,25 +16,35 @@ app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//Pour l'image
 const dbimg = require("./app/models/images");
-dbimg.sequelize.sync({ force: true }).then(() => {
+dbimg.sequelize.sync( ).then(() => {
     console.log("Drop and re-sync db.");
   });
 
-const db = require("./app/models/produits");
-db.sequelize.sync({ force: true }).then(() => {
-    console.log("Drop and re-sync db.");
-});
-const dbuser = require("./app/models/users");
-dbuser.sequelize.sync({ force: true }).then(() => {
-    console.log("Drop and re-sync dbuser.");
-});
-
+  //Pour les administrateurs
   const dbadmin = require("./app/models/admins");
   dbadmin.sequelize.sync({ force: true }).then(() => {
       console.log("Drop and re-sync dbadmin.");
     });
-  const initRoutes = require("./app/routes/image.routes");
+    const initRoutes = require("./app/routes/image.routes");
+  
+  //Pour les farmers
+  const dbfarmer = require("./app/models/farmers");
+  dbfarmer.sequelize.sync({ force: true }).then(() => {
+      console.log("Drop and re-sync dbfarmer.");
+  });
+
+const dbproduit = require("./app/models/produits");
+dbproduit.sequelize.sync({ force: true }).then(() => {
+    console.log("Drop and re-sync dbproduit.");
+});
+
+//pour le client
+const dbclient = require("./app/models/clients");
+  dbclient.sequelize.sync({ force: true }).then(() => {
+      console.log("Drop and re-sync dbclient.");
+});
 
 // simple route
 app.get("/", (req, res) => {
@@ -50,9 +60,10 @@ initRoutes(app);
 ///// route
 
 require("./app/routes/image.routes")(app);
-require("./app/routes/user.routes")(app);
+require("./app/routes/farmer.routes")(app);
 require("./app/routes/admin.routes")(app);
 require("./app/routes/produit.routes")(app);
+require("./app/routes/client.routes")(app);
 
 
 // set port, listen for requests

@@ -18,11 +18,11 @@
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col">
     <div class="list-group-item"   :class="{ active: index == currentIndex }"
-          v-for="(product, index) in products"
+          v-for="(produit, index) in produits"
           :key="index"
-          @click="setActiveProduct(Product, index)">
+          @click="setActiveProduit(Produit, index)">
            <div class="card-body">
-        <h5 class="card-title"> {{ Product.nom }}</h5>
+        <h5 class="card-title"> {{ Produit.nom }}</h5>
         <p class="card-text">  </p>
       </div>
     </div>
@@ -30,44 +30,44 @@
   </div>
       <ul class="list-group">
         <li class="list-group-item"   :class="{ active: index == currentIndex }"
-          v-for="(product, index) in products"
+          v-for="(produit, index) in produits"
           :key="index"
-          @click="setActiveProduct(Product, index)"
+          @click="setActiveProduit(Produit, index)"
         >
-             {{ Product.nom }}
+             {{ Produit.nom }}
         </li>
       </ul>
 
       
-      <!-- <button class="md-round md-danger" @click="removeAllProducts">
+      <!-- <button class="md-round md-danger" @click="removeAllProduits">
         Remove All
       </button> -->
     </div>
     <!-- END of list -->
 
     <div class="col-md-6">
-      <div v-if="currentProduct">
-        <h4>Product</h4>
+      <div v-if="currentProduit">
+        <h4>Produit</h4>
         <div>
-          <label><strong>Nom:</strong></label> {{ currentProduct.nom }}
+          <label><strong>Nom:</strong></label> {{ currentProduit.nom }}
         </div>
         <div>
-          <label><strong>Description:</strong></label> {{ currentProduct.description }}
+          <label><strong>Description:</strong></label> {{ currentProduit.description }}
         </div>
         <div>
-          <label><strong>Status:</strong></label> {{ currentProduct.published ? "Published" : "Pending" }}
+          <label><strong>Status:</strong></label> {{ currentProduit.published ? "Published" : "Pending" }}
         </div>
 
         <a class="md-primary md-round"
-          :href="'/Products/' + currentProduct.id"
+          :href="'/Produits/' + currentProduit.id"
         >
           Edit
         </a>
-        <md-button class="md-round md-danger" @click="removeAllProducts" >Supprimer</md-button>
+        <md-button class="md-round md-danger" @click="removeAllProduits" >Supprimer</md-button>
       </div>
       <div v-else>
         <br />
-        <p>Please click on a Product...</p>
+        <p>S'il vous plait cliquer sur un Produit...</p>
         
       </div>
 
@@ -88,22 +88,22 @@
 </template>
 
 <script>
-import ProductDataService from "../services/ProductDataService";
+import ProduitDataService from "../services/ProduitDataService";
 export default {
  
   data() {
     return {
-      products: [],
-      currentProduct: null,
+      produits: [],
+      currentProduit: null,
       currentIndex: -1,
       nom: ""
     };
   },
   methods: {
-    retrieveProducts() {
-      ProductDataService.getAll()
+    retrieveProduits() {
+      ProduitDataService.getAll()
         .then(response => {
-          this.products = response.data;
+          this.produits = response.data;
           console.log(response.data);
         })
         .catch(e => {
@@ -112,18 +112,18 @@ export default {
     },
 
     refreshList() {
-      this.retrieveProducts();
-      this.currentProduct = null;
+      this.retrieveProduits();
+      this.currentProduit = null;
       this.currentIndex = -1;
     },
 
-    setActiveProduct(product, index) {
-      this.currentProduct = product;
+    setActiveProduit(produit, index) {
+      this.currentProduit = produit;
       this.currentIndex = index;
     },
 
-    removeAllProducts() {
-      ProductDataService.delete()
+    removeAllProduits() {
+      ProduitDataService.delete()
         .then(response => {
           console.log(response.data);
           this.refreshList();
@@ -134,9 +134,9 @@ export default {
     },
     
     searchNom() {
-      ProductDataService.findByNom(this.nom)
+      ProduitDataService.findByNom(this.nom)
         .then(response => {
-          this.products = response.data;
+          this.produits = response.data;
           console.log(response.data);
         })
         .catch(e => {
@@ -145,7 +145,7 @@ export default {
     }
   },
   mounted() {
-    this.retrieveProducts();
+    this.retrieveProduits();
   }
 };
 </script>

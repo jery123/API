@@ -18,7 +18,7 @@
           <div class="md-layout-item md-small-size-100 md-size-33">
             <md-field>
               <label>Nom d'utilisateur</label>
-              <md-input v-model="productname" type="text"></md-input>
+              <md-input v-model="produit.name" type="text"></md-input>
             </md-field>
           </div>
           <div class="md-layout-item md-small-size-100 md-size-33">
@@ -30,19 +30,19 @@
           <div class="md-layout-item md-small-size-100 md-size-50">
             <md-field>
               <label>Nom</label>
-              <md-input v-model="nom" type="text"></md-input>
+              <md-input v-model="produit.nom" type="text"></md-input>
             </md-field>
           </div>
           <div class="md-layout-item md-small-size-100 md-size-33">
             <md-field>
               <label>Quantité</label>
-              <md-input v-model="product.quantité" type="number"></md-input>
+              <md-input v-model="produit.quantité" type="number"></md-input>
             </md-field>
           </div>
           <div class="md-layout-item md-small-size-100 md-size-33">
             <md-field>
               <label>Prix Unitaire</label>
-              <md-input v-model="product.prixUnitaire" type="number"></md-input>
+              <md-input v-model="produit.prixUnitaire" type="number"></md-input>
             </md-field>
           </div>
           <!-- <md-select ng-model="items" placeholder="Unité de Mesure " style="min-width: 200px;">
@@ -58,7 +58,7 @@
           <!-- <div class="md-layout-item md-small-size-100 md-size-100">
             <md-field>
               <label>Prix Unitaire</label>
-              <md-input v-model="product.prixUnitaire" type="number"></md-input>
+              <md-input v-model="produit.prixUnitaire" type="number"></md-input>
             </md-field>
           </div> -->
           
@@ -77,11 +77,11 @@
           <div class="md-layout-item md-size-100">
             <md-field maxlength="5">
               <label>Description</label>
-              <md-textarea v-model="product.description"></md-textarea>
+              <md-textarea v-model="produit.description"></md-textarea>
             </md-field>
           </div>
           <div class="md-layout-item md-size-100 text-right">
-            <md-button  @click="saveProduct" class="md-primary md-round">Ajouter</md-button>
+            <md-button  @click="saveProduit" class="md-primary md-round">Ajouter</md-button>
           </div>
         </div>
       </md-card-content>
@@ -89,12 +89,12 @@
       </div>
         <div v-else>
       <h4>Votre profil a été modifier avec succès</h4>
-      <md-button class="btn btn-success" @click="newProduct">Add</md-button>
+      <md-button class="btn btn-success" @click="newProduit">Add</md-button>
     </div>
   </form>
 </template>
 <script>
-import ProductDataService from "../../services/ProductDataService";
+import ProduitDataService from "../../services/ProduitDataService";
 
 export default {
   name: "edit-profil-prod",
@@ -107,7 +107,7 @@ export default {
    
   data() {
     return {
-      product: {
+      produit: {
         nom: "",
         description: "",
         published: "",
@@ -120,17 +120,17 @@ export default {
 
     },
      methods: {
-    saveProduct() {
+    saveProduit() {
       var data = {
-        nom:this.product.nom,
-        description: this.product.description,
-        quantité: this.product.quantité,
-        uniteDeMesure: this.product.uniteDeMesure,
+        nom:this.produit.nom,
+        description: this.produit.description,
+        quantité: this.produit.quantité,
+        uniteDeMesure: this.produit.uniteDeMesure,
       };
 
-      ProductDataService.create(data)
+      ProduitDataService.create(data)
         .then(response => {
-          this.product.id = response.data.id;
+          this.produit.id = response.data.id;
           console.log(response.data);
           this.submitted = true;
         })
@@ -140,9 +140,9 @@ export default {
         
     },
     
-    newProduct() {
+    newProduit() {
       this.submitted = false;
-      this.product = {};
+      this.produit = {};
     }
   }
 };
